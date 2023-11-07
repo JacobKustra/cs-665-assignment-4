@@ -1,16 +1,31 @@
 
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | Jacob Kustra               |
+| Date         | 11/7/2023                  |
+| Course       | Fall                       |
+| Assignment # | 4                          |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+For assignment 4, my task was to create an way for a company to be able
+to access customer data stored on the USB drives, which is normally accessed
+via a legacy interface to now be accessible through their new HTTPS interface.
+
+
+# Assignment Assumptions
+I made a few assumptions about this assignment. First was that the company wouldn't
+ever want to delete customers from their database as this is proper record keeping and
+allowing deletions would be bad practice. Additionally, I assumed the company would still
+want to keep their old legacy USB interface around so it is still accessible if called upon
+but also was used during testing to show the information was the same. I also assumed the 
+printCustomer method was to be used by the company to get the customers name, for potentially
+greeting them in the store to personalize their experience or simply to double check that the
+customer they are working with are the person they say they are, while the getCustomer... method
+would be utilized to get the full account information such as name, email and phone number.
+
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/JacobKustra/cs-665-assignment-4
 
 # Implementation Description 
 
@@ -19,11 +34,34 @@ For each assignment, please answer the following:
 
 - Explain the level of flexibility in your implementation, including how new object types can
 be easily added or removed in the future.
+  - My implementation is very flexible and can be easily modified to add additional information
+  to the customer accounts or even to how the interface works. It can also be changed to update
+  the old legacy interface should that ever need to happen. Thus, my implementation is future proof
+  for the company while allowing them to only need to use one interface to access their customer
+  data.
+
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
 easy for others to read and maintain.
+  - I believe my implementation is very simple to understand as it is very pieced out into each
+  individual part, meaning if there are ever any issues or changes that need to occur, simply
+  navigating to the correct file is all the person will have to do to make those changes. 
+  Additionally, the way I implemented it means that changes made can be very specific to one 
+  interface or database without having an impact on the other system.
+
 - Describe how you have avoided duplicated code and why it is important.
+  - Code duplication was difficult on this project as through using interfaces, especially
+  such similar ones as this company had means that there will be a lot of similar code that
+  could have been avoided if the company chose to deal with their legacy customer data in a 
+  different way, such as migrating it over. However, I still tried to maintain minimal duplication
+  while also keeping it very future proof so that changes could be made to the individual databases
+  or interfaces without needing to change a ton of connected interfaces/databases.
+
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
+  - In this assignment I implemented the adapter pattern which is how I was able to adapt the
+  old legacy USB interface, which was the adaptee, into the new HTTPS interface the company wanted
+  to use. This design pattern allowed for the client to use the same methods they were used to but
+  pull the USB data, making it more friendly via this adapter pattern in class "UsbToHttpsAdapter".
 
 
 # Maven Commands

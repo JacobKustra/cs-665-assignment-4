@@ -6,7 +6,7 @@
  * Description: This class is responsible for the methods and attributes of a Person.
  */
 
-package edu.bu.met.cs665.example1;
+package edu.bu.met.cs665.assign4;
 
 /**
  * This is the Person class.
